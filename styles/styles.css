@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    /* Primary Colors */
+
+    --paleBlue: hsl(225, 100%, 94%);
+    --brightBlue: hsl(245, 75%, 52%);
+
+    /* Neutral */
+
+    --veryPaleBlue: hsl(225, 100%, 98%);
+    --desaturedBlue: hsl(224, 23%, 55%);
+    --darkBlue: hsl(223, 47%, 23%);
+
+    /* Fonts */
+
+    --fontParagraph: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+main {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    background-color: var(--paleBlue);
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-position: top;
+    background-size: 300%;
+    background-repeat: no-repeat;
+}
+
+h2, h3 {
+    font-size: 2.4rem;
+}
+
+p {
+    font-size: var(--fontParagraph);
+}
+
+.card {
+    justify-self: center;
+    width: 320px;
+    margin: 0;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(1, 1fr);
+    grid-template-areas: 
+    'card__head'
+    'card__main'
+    'card__footer';
+    border-radius: 40px;
+}
+
+.card__head {
+    height: 150px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    grid-area: card__head;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: flex-end;
+}
+
+.card__head img {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/illustration-hero.svg);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.card__main {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-area: card__main;
+    background-color: white;
+}
+
+.card__main h2 {
+    margin-top: 15px;
+}
+
+.card__main p {
+    margin: 15px 0;
+    width: 80%;
+    text-align: center;
+    color: var(--desaturedBlue);
+    line-height: 2.5rem;
+}
+
+.card__main .plan {
+    background-color: var(--veryPaleBlue);
+    margin: 20px auto;
+    width: 90%;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card__main .plan i {
+    margin: 0 15px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icon-music.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card__main .plan span h3 {
+    font-size: var(--fontParagraph);
+}
+
+.card__main .plan span p {
+    margin: 0;
+}
+
+.card__main .plan a {
+    font-size: var(--fontParagraph);
+    font-weight: 700;
+    color: var(--brightBlue);
+    margin-left: 40px;
+    margin-right: 15px;
+}
+
+
+.card__footer {
+    grid-row: 3 / 4;
+    grid-area: card__footer;
+    grid-column: 1 / 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.card__footer #payment {
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+    background-color: var(--brightBlue);
+    color: white;
+    font-size: var(--fontParagraph);
+    font-weight: 700;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 2px 5px 2px 1px hsl(245, 75%, 52%, 0.5);;
+}
+
+.card__footer #cancel-order {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 80%;
+    height: 50px;
+    background-color: white;
+    color: var(--desaturedBlue);
+    font-size: var(--fontParagraph);
+    font-weight: 700;
+    border-style: none;
+    border-radius: 10px;
+
+}
+
+@media (min-width: 700px) {
+    main {
+        background-size: 200%;
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        background-size: 100%;
+    }
+}
+
+
